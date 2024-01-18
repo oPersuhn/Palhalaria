@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "38ec8f06-26a3-4e7d-ae49-be7418c9fe02",
+		"name": "API de Entradas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32373658"
+	},
+	"item": [
+		{
+			"name": "Criar Entradas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome_produto\": \"Palha\",\r\n    \"quantidade\": 15,\r\n    \"sabor\": \"maracuja\",\r\n    \"data_entrada\": \"18/01\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/entradas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"entradas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Todas as Entradas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/entradas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"entradas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Entrada por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/entradas/3lc38zU4Z9fneA6kjz0Q",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"entradas",
+						"3lc38zU4Z9fneA6kjz0Q"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Entrada",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/entradas/3lc38zU4Z9fneA6kjz0Q",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"entradas",
+						"3lc38zU4Z9fneA6kjz0Q"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Entrada",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/entradas/3lc38zU4Z9fneA6kjz0Q",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"entradas",
+						"3lc38zU4Z9fneA6kjz0Q"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

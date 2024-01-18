@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "74c8adac-7837-48ad-bb6f-2a73eb173321",
+		"name": "API de Saidas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32373658"
+	},
+	"item": [
+		{
+			"name": "Criar Saidas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome_produto\": \"Palha\",\r\n    \"quantidade\": \"1\",\r\n    \"preco_unitario\": 10.99,\r\n    \"preco_total\": 10.99\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/saidas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"saidas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Todas as Saidas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/saidas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"saidas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter Saida por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/saidas/8lOChoAQnrbXnsYy4keY",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"saidas",
+						"8lOChoAQnrbXnsYy4keY"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar Saida",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome_produto\": \"Palha Mexicana\",\r\n    \"quantidade\": \"10\",\r\n    \"preco_unitario\": 10.99,\r\n    \"preco_total\": 109.90\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/saidas/PmHq6UiO7iDOcRmLYJtK",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"saidas",
+						"PmHq6UiO7iDOcRmLYJtK"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar Saida",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/saidas/8lOChoAQnrbXnsYy4keY",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"saidas",
+						"8lOChoAQnrbXnsYy4keY"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
