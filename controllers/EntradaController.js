@@ -1,12 +1,19 @@
 const db = require('../firebaseConfig');
 
-
 const EntradaController = {
     createEntrada: async (req, res) => {
         try {
+            const produtoRef = db.collection('produtos').doc(req.params.id);
+            const doc = await produtoRef.get();
+            
             const entradaRef = db.collection('entradas').doc();
             await entradaRef.set(req.body);
-            res.status(201).json({ id: entradaRef.id, ...req.body });
+            
+            if (!doc.exists) {
+                res.status(404).send('Produto não encontrado');
+            } else {
+                res.status(201).json({ idProduto: doc.id, id: entradaRef.id, ...req.body });
+            }
         } catch (error) {
             res.status(500).send(error.message);
         }
