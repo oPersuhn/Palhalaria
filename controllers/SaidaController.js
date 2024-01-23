@@ -7,6 +7,8 @@ const SaidaController = {
             const produtoRef = db.collection('produtos').doc(req.params.id);
             const doc = await produtoRef.get();
 
+            qtd_estoque = doc.data().qtd_estoque;
+
             const saidaRef = db.collection('saidas').doc();
             await saidaRef.set(req.body);
             
@@ -14,6 +16,7 @@ const SaidaController = {
                 res.status(404).send('Saída inválida, produto não existe.');
             } else {
                 res.status(201).json({ idProduto: doc.id, id: saidaRef.id, ...req.body });
+                console.log(qtd_estoque)
             }
             
         } catch (error) {

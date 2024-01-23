@@ -9,14 +9,28 @@ const EntradaController = {
             const entradaRef = db.collection('entradas').doc();
             await entradaRef.set(req.body);
             
-            const quantidade = req.body.quantidade;
+            const qtd_estoque = doc.data().qtd_estoque;
+
+            const qtd_entrada = req.body.quantidade;
             const preco = req.body.preco_unitario;
-            const preco_total = (quantidade*preco)
+            const preco_total = (qtd_entrada*preco)
+            
+             // Atualizar a quantidade em estoque no Firestore
+            const nova_qtd_estoque = qtd_estoque + qtd_entrada;
+
+            // Usando update para adicionar a quantidadeEntrada à quantidadeEstoqueAtual
+            await produtoRef.update({ qtd_estoque: nova_qtd_estoque });
+
             
             if (!doc.exists) {
                 res.status(404).send('Produto não encontrado');
             } else {
-                res.status(201).json({ id_produto: doc.id, id_entrada: entradaRef.id, ...req.body, preco_total: preco_total });
+                res.status(201).json({
+                id_produto: doc.id,
+                id_entrada: entradaRef.id,
+                ...req.body,
+                quantidade_estoque: nova_qtd_estoque,
+                preco_total: preco_total });
             }
         } catch (error) {
             res.status(500).send(error.message);
