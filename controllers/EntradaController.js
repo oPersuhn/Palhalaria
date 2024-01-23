@@ -8,15 +8,15 @@ const EntradaController = {
             
             const entradaRef = db.collection('entradas').doc();
             await entradaRef.set(req.body);
-            const quantidade = doc.data().quantidade;
-            const quantidadeBody = parseFloat.req.body.quantidade;
-            const novaQuantidade = (quantidade + quantidadeBody); 
+            
+            const quantidade = req.body.quantidade;
+            const preco = req.body.preco_unitario;
+            const preco_total = (quantidade*preco)
             
             if (!doc.exists) {
                 res.status(404).send('Produto não encontrado');
             } else {
-                res.status(201).json({ idProduto: doc.id, id: entradaRef.id, ...req.body });
-                console.log(novaQuantidade)
+                res.status(201).json({ id_produto: doc.id, id_entrada: entradaRef.id, ...req.body, preco_total: preco_total });
             }
         } catch (error) {
             res.status(500).send(error.message);
@@ -28,7 +28,7 @@ const EntradaController = {
             const entradasSnapshot = await db.collection('entradas').get();
             const entradas = [];
             entradasSnapshot.forEach(doc => {
-                entradas.push({ id: doc.id, ...doc.data() });
+                entradas.push({ id_entrada: doc.id, ...doc.data() });
             });
             res.status(200).json(entradas);
         } catch (error) {
@@ -43,7 +43,7 @@ const EntradaController = {
             if (!doc.exists) {
                 res.status(404).send('Entrada não encontrada');
             } else {
-                res.status(200).json({ id: doc.id, ...doc.data() });
+                res.status(200).json({ id_entrada: doc.id, ...doc.data() });
             }
         } catch (error) {
             res.status(500).send(error.message);
