@@ -8,11 +8,15 @@ const EntradaController = {
             
             const entradaRef = db.collection('entradas').doc();
             await entradaRef.set(req.body);
+            const quantidade = doc.data().quantidade;
+            const quantidadeBody = parseFloat.req.body.quantidade;
+            const novaQuantidade = (quantidade + quantidadeBody); 
             
             if (!doc.exists) {
                 res.status(404).send('Produto não encontrado');
             } else {
                 res.status(201).json({ idProduto: doc.id, id: entradaRef.id, ...req.body });
+                console.log(novaQuantidade)
             }
         } catch (error) {
             res.status(500).send(error.message);

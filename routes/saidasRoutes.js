@@ -3,7 +3,7 @@ const router = express.Router();
 const SaidaController = require('../controllers/SaidaController');
 
 // Rota para criar uma nova saída
-router.post('/saidas', SaidaController.createSaida);
+router.post('/saidas/:id', SaidaController.createSaida);
 
 // Rota para obter todas as saídas
 router.get('/saidas', SaidaController.getAllSaidas);

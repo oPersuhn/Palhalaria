@@ -4,9 +4,19 @@ const db = require('../firebaseConfig');
 const SaidaController = {
     createSaida: async (req, res) => {
         try {
+            const produtoRef = db.collection('produtos').doc(req.params.id);
+            const doc = await produtoRef.get();
+            const quantidade = doc.data().quantidade;
+            
             const saidaRef = db.collection('saidas').doc();
             await saidaRef.set(req.body);
-            res.status(201).json({ id: saidaRef.id, ...req.body });
+            
+            if (!doc.exists || quantidade <= 0) {
+                res.status(404).send('Saída inválida, produto não existe.');
+            } else {
+                res.status(201).json({ idProduto: doc.id, id: saidaRef.id, ...req.body });
+            }
+            
         } catch (error) {
             res.status(500).send(error.message);
         }
