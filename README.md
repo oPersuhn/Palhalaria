@@ -16,7 +16,7 @@
 Para instalar o projeto, certifique-se de ter o Node.js, Firebase, Express e Postman instalados. Clone o repositório do GitHub e siga as instruções abaixo:
 
 # Clonar o repositório
-git clone https://github.com/seu-usuario/palharia.git
+git clone https://github.com/oPersuhn/Palhalaria
 
 # Acessar o diretório do projeto
 cd palharia
