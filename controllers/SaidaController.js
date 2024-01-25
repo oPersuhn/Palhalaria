@@ -7,15 +7,19 @@ const SaidaController = {
             const produtoRef = db.collection('produtos').doc(req.params.id);
             const doc = await produtoRef.get();
 
-            qtd_estoque = doc.data().qtd_estoque;
+            const qtd_estoque = doc.data().qtd_estoque;
+            const qtd_entrada = req.body.quantidade;
 
             const saidaRef = db.collection('saidas').doc();
             await saidaRef.set(req.body);
             
-            if (!doc.exists) {
-                res.status(404).send('Saída inválida, produto não existe.');
+            if (!doc.exists || qtd_estoque<qtd_entrada) {
+                res.status(404).send('Saída inválida, produto não existe ou quantidade inválida.');
             } else {
-                res.status(201).json({ idProduto: doc.id, id: saidaRef.id, ...req.body });
+                res.status(201).json({
+                    id_produto: doc.id,
+                    id_saida: saidaRef.id,
+                    ...req.body});
                 console.log(qtd_estoque)
             }
             
