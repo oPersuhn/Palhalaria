@@ -10,6 +10,12 @@ const SaidaController = {
             const qtd_estoque = doc.data().qtd_estoque;
             const qtd_entrada = req.body.quantidade;
 
+             // Atualizar a quantidade em estoque no Firestore
+             const nova_qtd_estoque = qtd_estoque - qtd_entrada;
+
+             // Usando update para adicionar a quantidadeEntrada à quantidadeEstoqueAtual
+             await produtoRef.update({ qtd_estoque: nova_qtd_estoque });
+
             const saidaRef = db.collection('saidas').doc();
             await saidaRef.set(req.body);
             
