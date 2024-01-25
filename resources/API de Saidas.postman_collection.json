@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome_produto\": \"Palha\",\r\n    \"quantidade\": \"1\",\r\n    \"preco_unitario\": 10.99,\r\n    \"preco_total\": 10.99\r\n}",
+					"raw": "{\r\n    \"descricao\": \"palha sabor maracuja\",\r\n    \"quantidade\": 1,\r\n    \"preco_unitario\": 10,\r\n    \"data_saida\": \"2024/01/23\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,7 +21,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/saidas",
+					"raw": "http://localhost:3000/api/saidas/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -29,7 +29,14 @@
 					"port": "3000",
 					"path": [
 						"api",
-						"saidas"
+						"saidas",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
 					]
 				}
 			},
@@ -61,7 +68,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/saidas/8lOChoAQnrbXnsYy4keY",
+					"raw": "http://localhost:3000/api/saidas/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -70,7 +77,13 @@
 					"path": [
 						"api",
 						"saidas",
-						"8lOChoAQnrbXnsYy4keY"
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
 					]
 				}
 			},
@@ -91,7 +104,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/saidas/PmHq6UiO7iDOcRmLYJtK",
+					"raw": "http://localhost:3000/api/saidas/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -100,7 +113,13 @@
 					"path": [
 						"api",
 						"saidas",
-						"PmHq6UiO7iDOcRmLYJtK"
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
 					]
 				}
 			},
@@ -112,7 +131,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/saidas/8lOChoAQnrbXnsYy4keY",
+					"raw": "http://localhost:3000/api/saidas/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -121,7 +140,13 @@
 					"path": [
 						"api",
 						"saidas",
-						"8lOChoAQnrbXnsYy4keY"
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
 					]
 				}
 			},

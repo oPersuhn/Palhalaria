@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome_produto\": \"Palha\",\r\n    \"descricao\": \"Sabor Ninho\",\r\n    \"preco_unitario\": 10.99\r\n}\r\n",
+					"raw": "{\r\n    \"nome_produto\": \"Palha\",\r\n    \"descricao\": \"Sabor Melancia\",\r\n    \"preco_unitario\": 10,\r\n    \"qtd_estoque\": 0\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -61,7 +61,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/produtos/efEbj8c7oRt51lGyeDjO",
+					"raw": "http://localhost:3000/api/produtos/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -70,7 +70,13 @@
 					"path": [
 						"api",
 						"produtos",
-						"efEbj8c7oRt51lGyeDjO"
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "efEbj8c7oRt51lGyeDjO"
+						}
 					]
 				}
 			},
@@ -91,7 +97,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/produtos/S5vJYaFgoBkQpL8tLf3v",
+					"raw": "http://localhost:3000/api/produtos/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -100,7 +106,13 @@
 					"path": [
 						"api",
 						"produtos",
-						"S5vJYaFgoBkQpL8tLf3v"
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
 					]
 				}
 			},
@@ -112,7 +124,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/produtos/KDE8g9yAyi1fG5oQtHdu",
+					"raw": "http://localhost:3000/api/produtos/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -121,7 +133,13 @@
 					"path": [
 						"api",
 						"produtos",
-						"KDE8g9yAyi1fG5oQtHdu"
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
 					]
 				}
 			},

@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nome_produto\": \"Palha\",\r\n    \"quantidade\": 15,\r\n    \"sabor\": \"maracuja\",\r\n    \"data_entrada\": \"18/01\"\r\n}",
+					"raw": "{\r\n    \"descricao\": \"palha sabor maracuja\",\r\n    \"quantidade\": 20,\r\n    \"preco_unitario\": 10,\r\n    \"data_entrada\": \"2024/01/23\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,7 +21,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/entradas",
+					"raw": "http://localhost:3000/api/entradas/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -29,7 +29,14 @@
 					"port": "3000",
 					"path": [
 						"api",
-						"entradas"
+						"entradas",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
 					]
 				}
 			},
@@ -61,7 +68,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/entradas/3lc38zU4Z9fneA6kjz0Q",
+					"raw": "http://localhost:3000/api/entradas/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -70,7 +77,13 @@
 					"path": [
 						"api",
 						"entradas",
-						"3lc38zU4Z9fneA6kjz0Q"
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
 					]
 				}
 			},
@@ -81,8 +94,17 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n    \"descricao\": \"palha sabor maracuja\",\r\n    \"quantidade\": 10,\r\n    \"preco_unitario\": 10,\r\n    \"data_entrada\": \"2020/01/23\"\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:3000/api/entradas/3lc38zU4Z9fneA6kjz0Q",
+					"raw": "http://localhost:3000/api/entradas/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -91,7 +113,13 @@
 					"path": [
 						"api",
 						"entradas",
-						"3lc38zU4Z9fneA6kjz0Q"
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
 					]
 				}
 			},
@@ -103,7 +131,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/api/entradas/3lc38zU4Z9fneA6kjz0Q",
+					"raw": "http://localhost:3000/api/entradas/:id",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -112,7 +140,13 @@
 					"path": [
 						"api",
 						"entradas",
-						"3lc38zU4Z9fneA6kjz0Q"
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
 					]
 				}
 			},
