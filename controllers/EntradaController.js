@@ -76,7 +76,7 @@ const EntradaController = {
 
     deleteEntrada: async (req, res) => {
         try {
-            const entradaRef = db.collection('entrada').doc(req.params.id);
+            const entradaRef = db.collection('entradas').doc(req.params.id);
             await entradaRef.delete();
             res.status(200).send('Entrada deletada com sucesso');
         } catch (error) {
